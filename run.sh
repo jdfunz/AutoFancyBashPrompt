@@ -4,21 +4,16 @@ echo "[FancyPrompt] Download complete!"
 sleep 0.1
 echo "[FancyPrompt] Applying to .bashrc"
 echo "source $HOME/.fp.sh" >> $HOME/.bashrc
-PS3='[FancyPrompt] Would you like to apply neofetch to your prompt?'
-options=("y" "n")
-select opt in "${options[@]}"
-do
-    case $opt in
-        "y")
-            echo "[FancyPrompt] Applying neofetch"
-            curl -sSL https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o $HOME/.neofetch.sh
-            echo "bash $HOME/.neofetch.sh" >> $HOME/.bashrc
-            echo "[FancyPrompt] complete."
-            ;;
-        "n")
-            echo "[FancyPrompt] complete."
-            break
-            ;;
-        *) echo "invalid option $REPLY";;
-    esac
-done
+
+function neofetch {
+    echo "[FancyPrompt] Applying neofetch"
+    curl -sSL https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o $HOME/.neofetch.sh
+    echo "bash $HOME/.neofetch.sh" >> $HOME/.bashrc
+    echo "[FancyPrompt] complete."
+}
+read -p "Install neofetch? (y/n)?" choice
+case "$choice" in 
+  y|Y ) echo "yes";;
+  n|N ) echo "[FancyPrompt] complete.";;
+  * ) echo "invalid";;
+esac
