@@ -13,11 +13,12 @@ do
             echo "[FancyPrompt] Applying neofetch"
             curl -sSL https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o $HOME/.neofetch.sh
             echo "\nbash $HOME/.neofetch.sh" >> $HOME/.bashrc
+            echo "[FancyPrompt] complete."
             ;;
         "n")
+            echo "[FancyPrompt] complete."
             break
             ;;
         *) echo "invalid option $REPLY";;
     esac
 done
-echo "[FancyPrompt] complete."
