@@ -3,7 +3,7 @@ curl -sSL https://raw.githubusercontent.com/pjmp/fancy-linux-prompt/master/fancy
 echo "[FancyPrompt] Download complete!"
 sleep 0.1
 echo "[FancyPrompt] Applying to .bashrc"
-echo "\nsource $HOME/.fp.sh" >> $HOME/.bashrc
+echo "source $HOME/.fp.sh" >> $HOME/.bashrc
 PS3='[FancyPrompt] Would you like to apply neofetch to your prompt?'
 options=("y" "n")
 select opt in "${options[@]}"
@@ -12,7 +12,7 @@ do
         "y")
             echo "[FancyPrompt] Applying neofetch"
             curl -sSL https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o $HOME/.neofetch.sh
-            echo "\nbash $HOME/.neofetch.sh" >> $HOME/.bashrc
+            echo "bash $HOME/.neofetch.sh" >> $HOME/.bashrc
             echo "[FancyPrompt] complete."
             ;;
         "n")
