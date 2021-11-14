@@ -10,7 +10,7 @@ if [ "$CONT" = "y" ]; then
   echo "[FancyPrompt] Applying neofetch"
   curl -sSL https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o $HOME/.neofetch.sh
   echo "bash $HOME/.neofetch.sh" >> $HOME/.bashrc
-  echo "[FancyPrompt] complete."
+  echo "[FancyPrompt] complete.";
 else
-  echo "[FancyPrompt] complete."
+  echo "[FancyPrompt] complete.";
 fi
